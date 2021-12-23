@@ -74,7 +74,6 @@ def StuInfo(request):
 def qianxuesen_Getxuanke(request):
     res=request.GET
     st_id=res.get('st_id')
-    status = 'failed'
     clist=[]
     datas=QianxuesenQianxuesenQianxuesen.objects.filter(st_id=st_id)
     list=QxsTeaRate.objects.filter(st_id=st_id)
@@ -89,7 +88,7 @@ def qianxuesen_Getxuanke(request):
                 ispj = True
             clist.append(
                 {"cl_name": data.cl_name, "cl_cid": data.cl_cid, "cl_id": data.cl_id, "cl_credit": data.cl_credit, "teacher":data.teacher,"ispj":ispj})
-        status = 'success'
+    status = 'success'
     msg = {
         'status': status,
         'clist':clist
@@ -146,7 +145,6 @@ def list(request):
     res = request.GET
     pagenum = int(res.get('pagenum'))
     pagesize = int(res.get('pagesize'))
-    status = 'failed'
     updatedetails()
     datas = QxsRatedetils.objects.all().order_by('-cl_school')
     print(datas)
@@ -162,7 +160,6 @@ def list(request):
                      'num':datas[index].num,'point':datas[index].point,'id':datas[index].id
                      }
                 )
-            status = 'success'
         elif (pagenum-1)*pagesize in range(total):
             for index in range((pagenum - 1) * pagesize, total):
                 list.append(
@@ -171,8 +168,8 @@ def list(request):
                      'num': datas[index].num, 'point': datas[index].point,'id':datas[index].id
                      }
                 )
-            status = 'success'
 
+    status = 'success'
     msg = {
         'list':list,
         'total':total,
@@ -245,7 +242,7 @@ def details(request):
                 list.append(
                     {'adv':adv.adv}
                 )
-            status='success'
+        status='success'
     msg ={
         'status':status,
         'teacher':teacher,

@@ -29,8 +29,6 @@ ALLOWED_HOSTS = ['*']
 
 CORS_ORIGIN_WHITELIST = (
     'http://127.0.0.1:8008',
-    'http://localhost:8008',
-    'https://4y18n40827.51vip.biz:38841'
 )
 CORS_ORIGIN_ALLOW_ALL=True#允许所有的ip访问
 CORS_ALLOW_CREDENTIALS = True#允许cookie
