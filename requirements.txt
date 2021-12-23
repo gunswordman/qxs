@@ -1,0 +1,9 @@
+asgiref==3.4.1
+certifi==2021.10.8
+Django==4.0
+django-cors-headers==3.10.1
+PyMySQL==1.0.2
+simpleui==4.0.2
+sqlparse==0.4.2
+tzdata==2021.5
+wincertstore==0.2

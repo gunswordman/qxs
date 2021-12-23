@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>南京理工大学钱学森学院</title>
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- import Vue before Element -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <!-- import JavaScript -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<style type="text/css">
+    html, body, #app {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+<body>
+<div id="app">
+    <el-container style="height: 100%; border: 1px solid #eee">
+        <el-header style="text-align:left; font-size: 60px;background-color: aqua;height: 100px!important">南京理工大学钱学森学院
+        </el-header>
+        <el-header style="text-align: right; font-size: 12px">
+            <el-dropdown>
+                <i class="el-icon-setting" style="margin-right: 15px"></i>
+                <el-dropdown-menu >
+                    <el-dropdown-item>查看</el-dropdown-item>
+                    <el-dropdown-item>新增</el-dropdown-item>
+                    <el-dropdown-item>删除</el-dropdown-item>
+                </el-dropdown-menu>
+            </el-dropdown>
+            <span>王小虎</span>
+        </el-header>
+        <el-container>
+            <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
+                <el-menu default-active="2" class="el-menu-vertical-demo" >
+                    <el-menu-item index="1">
+                        <i class="el-icon-location"></i>
+                        <span slot="title">查询培养计划</span>
+                    </el-menu-item>
+                    <el-menu-item index="2">
+                        <i class="el-icon-menu"></i>
+                        <span slot="title">查询选课信息</span>
+                    </el-menu-item>
+                    <el-menu-item index="3">
+                        <i class="el-icon-document"></i>
+                        <span slot="title">查询课程成绩</span>
+                    </el-menu-item>
+                </el-menu>
+            </el-aside>
+            <el-main>
+                    <iframe src="table.html" style="width:100%;height: 548px" frameborder="0"></iframe>
+            </el-main>
+        </el-container>
+    </el-container>
+</div>
+</body>
+<script>
+    new Vue().$mount('#app')
+</script>
+</html>
